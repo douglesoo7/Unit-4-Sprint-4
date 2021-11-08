@@ -1,8 +1,7 @@
-package com.example.unit4sprint4.Model
+package com.example.unit4sprint4.model
 
 import javax.annotation.Generated
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
 @Generated("com.robohorse.robopojogenerator")
 data class StreetDTO(

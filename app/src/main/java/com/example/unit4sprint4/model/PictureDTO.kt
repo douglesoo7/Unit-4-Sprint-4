@@ -1,7 +1,6 @@
-package com.example.unit4sprint4.Model
+package com.example.unit4sprint4.model
 
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
 data class PictureDTO(
 
