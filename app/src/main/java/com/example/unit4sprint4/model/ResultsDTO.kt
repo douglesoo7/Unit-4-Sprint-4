@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName
 data class ResultsDTO(
 
     @PrimaryKey(autoGenerate = true)
-    val quoteId:Int,
+    val userId:Int,
 
     @field:SerializedName("gender")
 	val gender: String? = null,

@@ -7,11 +7,13 @@ import com.example.unit4sprint4.model.ResultsDTO
 
 @Dao
 interface UserDao {
+/*
 
     @Insert
     suspend fun addUser(user:List<ResultsDTO>)
 
     @Query("SELECT * FROM user")
     suspend fun getUser(): List<ResultsDTO>
+*/
 
 }

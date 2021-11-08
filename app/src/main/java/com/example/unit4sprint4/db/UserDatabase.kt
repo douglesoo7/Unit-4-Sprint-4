@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.unit4sprint4.model.ResultsDTO
+/*
 
 @Database(entities = [ResultsDTO::class], version = 1)
 abstract class UserDatabase : RoomDatabase() {
@@ -27,4 +28,4 @@ abstract class UserDatabase : RoomDatabase() {
             return INSTANCE!!
         }
     }
-}
+}*/
