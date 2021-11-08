@@ -17,6 +17,6 @@ class UserApplication:Application() {
     private fun initialize() {
         val usersAPI= RetrofitHelper.getInstance().create(UserAPI::class.java)
         val database=UserDatabase.getDatabase(applicationContext)
-        userRepository = UserRepository(usersAPI,database)
+        userRepository = UserRepository(usersAPI,database,applicationContext)
     }
 }
