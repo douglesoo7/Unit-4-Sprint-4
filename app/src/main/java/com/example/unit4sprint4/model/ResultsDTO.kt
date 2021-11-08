@@ -1,8 +1,15 @@
 package com.example.unit4sprint4.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+
+@Entity(tableName = "user")
 data class ResultsDTO(
+
+    @PrimaryKey(autoGenerate = true)
+    val quoteId:Int,
 
     @field:SerializedName("gender")
 	val gender: String? = null,

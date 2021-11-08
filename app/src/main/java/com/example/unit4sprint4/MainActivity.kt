@@ -3,16 +3,14 @@ package com.example.unit4sprint4
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.unit4sprint4.api.RetrofitHelper
 import com.example.unit4sprint4.api.UserAPI
 import com.example.unit4sprint4.repository.UserRepository
 import com.example.unit4sprint4.viewmodels.MainViewModel
 import com.example.unit4sprint4.viewmodels.MainViewModelFactory
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +24,9 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel = ViewModelProvider(this, MainViewModelFactory(repository)).get(MainViewModel::class.java)
 
-
+        mainViewModel.user.observe(this, Observer {
+            Log.d("Sachin",it.results.toString())
+        })
 
 
     }
