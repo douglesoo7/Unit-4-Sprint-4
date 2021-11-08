@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.example.unit4sprint4.api.RetrofitHelper
 import com.example.unit4sprint4.api.UserAPI
 import com.example.unit4sprint4.repository.UserRepository
@@ -31,20 +32,20 @@ class MainActivity : AppCompatActivity() {
                 it?.results?.get(0)?.name?.title + " " + it?.results?.get(0)?.name?.first + " " + it?.results?.get(
                     0
                 )?.name?.last
-
+            Glide.with(ivImage).load(it?.results?.get(0)?.picture?.medium).into(ivImage)
             val city = it?.results?.get(0)?.location?.city
             val country = it?.results?.get(0)?.location?.country
             val gender = it?.results?.get(0)?.gender
             val phone = it?.results?.get(0)?.phone.toString()
-            val dob=it?.results?.get(0)?.dob?.date.toString()
-            val email=it?.results?.get(0)?.email.toString()
+            val dob = it?.results?.get(0)?.dob?.date.toString()
+            val email = it?.results?.get(0)?.email.toString()
             tvName.text = name
             tvCity.text = city
             tvCountry.text = country
             tvGender.text = gender
             tvPhone.text = phone
-            tvDOB.text=dob
-            tvEmail.text=email
+            tvDOB.text = dob
+            tvEmail.text = email
 
             //Log.d("Sachin", it.results.toString())
         })
