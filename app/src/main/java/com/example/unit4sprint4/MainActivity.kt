@@ -19,14 +19,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val usersAPI=RetrofitHelper.getInstance().create(UserAPI::class.java)
-        val repository = UserRepository(usersAPI)
+        val repository=(application as UserApplication).userRepository
 
         mainViewModel = ViewModelProvider(this, MainViewModelFactory(repository)).get(MainViewModel::class.java)
 
         mainViewModel.user.observe(this, Observer {
             Log.d("Sachin",it.results.toString())
         })
+
+
 
 
     }
