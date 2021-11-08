@@ -2,7 +2,6 @@ package com.example.unit4sprint4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
@@ -12,6 +11,9 @@ import com.example.unit4sprint4.repository.UserRepository
 import com.example.unit4sprint4.viewmodels.MainViewModel
 import com.example.unit4sprint4.viewmodels.MainViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,7 +34,9 @@ class MainActivity : AppCompatActivity() {
                 it?.results?.get(0)?.name?.title + " " + it?.results?.get(0)?.name?.first + " " + it?.results?.get(
                     0
                 )?.name?.last
-            Glide.with(ivImage).load(it?.results?.get(0)?.picture?.medium).into(ivImage)
+
+            Glide.with(ivImage).load(it?.results?.get(0)?.picture?.large).into(ivImage)
+
             val city = it?.results?.get(0)?.location?.city
             val country = it?.results?.get(0)?.location?.country
             val gender = it?.results?.get(0)?.gender
@@ -47,6 +51,12 @@ class MainActivity : AppCompatActivity() {
             tvDOB.text = dob
             tvEmail.text = email
 
+            btnNext.setOnClickListener {
+                CoroutineScope(Dispatchers.IO).launch {
+                    repository.getUsers()
+                }
+
+            }
             //Log.d("Sachin", it.results.toString())
         })
 

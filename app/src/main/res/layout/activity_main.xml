@@ -4,75 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
     android:layout_marginTop="10dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/ivImage"
-        android:src="@mipmap/ic_launcher"
         android:layout_width="match_parent"
-        android:scaleType="fitXY"
         android:layout_height="200dp"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="Sachin Modi"
-        android:textSize="18sp"
-        android:layout_margin="10dp"/>
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tvGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="Male"
-        android:textSize="18sp"
-        android:layout_margin="10dp"/>
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tvCity"
-        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="Lucknow"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tvCountry"
-        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="India"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tvPhone"
-        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="+91-9911111111"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tvDOB"
-        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="12/08/1998"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tvEmail"
-        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="sachin@google.com"
         android:textSize="18sp" />
 
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Next"
+        android:textSize="22sp" />
 
 
 </LinearLayout>
